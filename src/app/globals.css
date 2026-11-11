@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+section[id] { scroll-margin-top: 88px; }
+body { @apply bg-[#FAFAFD] text-tinta antialiased; }
+
+@layer components {
+  .container-site { @apply mx-auto w-full max-w-6xl px-5 sm:px-8; }
+  .gradiente-marca { background: linear-gradient(135deg, #4F6BFF 0%, #7C5CFC 55%, #9B5CF6 100%); }
+  .texto-gradiente { @apply bg-clip-text text-transparent; background-image: linear-gradient(90deg, #4F6BFF, #7C5CFC, #A855F7); }
+  .vidro { @apply border border-white/70 bg-white/70 backdrop-blur-xl; }
+  .botao-primario {
+    @apply gradiente-marca inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 font-semibold text-white shadow-suave transition hover:brightness-110 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violeta-600;
+  }
+  .botao-secundario {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-violeta-100 bg-white px-6 py-3 font-semibold text-tinta transition hover:border-violeta-500/40 hover:bg-violeta-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violeta-600;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+  html { scroll-behavior: auto; }
+}
